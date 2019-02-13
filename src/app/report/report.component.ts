@@ -19,6 +19,7 @@ export class ReportComponent implements OnInit {
     this.kmom = this.route.snapshot.paramMap.get("kmom");
     this.data.getReports(this.kmom).subscribe(data => {
       this.report = data;
+      console.log(data)
     })
   }
 }
