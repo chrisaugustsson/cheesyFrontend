@@ -10,9 +10,12 @@ export class NavComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  loggedIn = this.authService.isLoggedIn();
+  loggedIn: boolean
 
   ngOnInit() {
   }
 
+  ngDoCheck() {
+    this.loggedIn = this.authService.isLoggedIn();
+  }
 }

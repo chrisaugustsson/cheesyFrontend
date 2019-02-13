@@ -11,8 +11,6 @@ export class NewReportComponent implements OnInit {
   constructor(private data: DataService) { }
 
   newReport(name, content) {
-    console.log(name);
-    console.log(content);
     this.data.createReport(name, content).subscribe((res) => {
       console.log(res);
     });
