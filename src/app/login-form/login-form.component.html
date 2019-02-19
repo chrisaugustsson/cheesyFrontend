@@ -10,5 +10,5 @@
   <div class="field">
     <button (click)="login(email, password)" class="button is-primary" [disabled]="!loginForm.form.valid" type="submit">Send</button>
   </div>
-  {{message}}
+  <div *ngIf="message" class="help is-danger">{{message}}</div>
 </form>
