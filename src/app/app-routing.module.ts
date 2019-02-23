@@ -5,6 +5,7 @@ import { ReportsComponent } from "./reports/reports.component";
 import { ReportComponent } from "./report/report.component";
 import { LoginComponent } from "./login/login.component";
 import { NewReportComponent } from "./new-report/new-report.component";
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'reports/:kmom', component: ReportComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'newReport', component: NewReportComponent }
+  { path: 'newReport', component: NewReportComponent },
+  { path: 'chat', component: ChatComponent }
 ];
 
 @NgModule({

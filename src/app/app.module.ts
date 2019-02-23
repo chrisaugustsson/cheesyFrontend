@@ -13,6 +13,7 @@ import { ReportComponent } from './report/report.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginComponent } from './login/login.component';
 import { NewReportComponent } from './new-report/new-report.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NewReportComponent } from './new-report/new-report.component';
     ReportComponent,
     LoginFormComponent,
     LoginComponent,
-    NewReportComponent
+    NewReportComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

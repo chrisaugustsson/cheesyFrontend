@@ -1,0 +1,26 @@
+.chat-box {
+    max-width: 80%;
+    min-width: 10%;
+    word-wrap:break-word;
+}
+
+.chat-container {
+    min-height: 500px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.outer-chat-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.message-container-left {
+    justify-content: flex-start;
+    display: flex;
+}
+
+.message-container-right {
+    display: flex;
+    justify-content: flex-end;
+} 
