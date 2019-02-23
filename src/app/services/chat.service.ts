@@ -43,7 +43,7 @@ export class ChatService {
   }
 
   connect(user) {
-    this.socket = io("http://localhost:1337", {
+    this.socket = io("https://me-api.chau17.me", {
       query: {
         user: user
       }
