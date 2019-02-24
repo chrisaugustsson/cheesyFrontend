@@ -32,7 +32,6 @@ export class ChatService {
   typing() {
     let observable = new Observable<{ user: String, typing: Boolean }>(observer => {
       this.socket.on("typing", (data) => {
-        console.log(data)
         observer.next(data);
       });
 
