@@ -11,13 +11,19 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
-    return this.http.post("https://me-api.chau17.me/user/login", { email, password });
+    return this.http.post("http://localhost:1337/user/login", { email, password });
   }
 
-  storeJWT(token) {
+  storeJWT(token, user) {
     localStorage.setItem("token", token);
+    localStorage.setItem("user", user);
+
     const expiresAt = moment().add(60, 'minutes');
     localStorage.setItem("expires", JSON.stringify(expiresAt.valueOf()));
+  }
+
+  registerUser(email: string, password: string) {
+    return this.http.post("http://localhost:1337/user/register", { email, password });
   }
 
   public isLoggedIn() {

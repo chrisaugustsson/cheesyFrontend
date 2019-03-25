@@ -1,0 +1,42 @@
+<div class="columns is-centered">
+  <div class="column is-half">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sell</th>
+          <th>Cheeze</th>
+          <th>Amount</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of userCheese; let i = index">
+          <td><button (click)="sellCheeseModal(i)" class="button">Sell</button></td>
+          <td>{{u.name}}</td>
+          <td>{{u.share}}</td>
+          <ng-container *ngFor="let c of cheese">
+            <td *ngIf="u.name === c.name">{{ c.price }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="cheese" class="modal is-clipped" [class.is-active]="modal">
+  <div (click)="modalClick()" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="content">
+        <div class="field">
+          <label class="label">Sell {{cheese[activeCheese].name}}:</label>
+          <p>Price: {{ cheese[activeCheese].price }}</p>
+          <input [(ngModel)]="amount" type="number" class="input" [class.is-danger]="!buyIsValid">
+          <p *ngIf="!buyIsValid" class="has-text-danger">insufficient funds</p>
+          <p>Credits: {{amount ? amount * cheese[activeCheese].price : 0}}</p>
+        </div>
+        <button (click)="sellCheese(amount, amount * cheese[activeCheese].price)" class="button is-success">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="columns is-centered is-vcentered content">
+  <div class="column is-vcentered">
+    <table class="table is-hoverable is-vcentered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Graph</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of cheese; let i = index">
+          <td>{{ c.name }}</td>
+          <td>{{ c.price }}</td>
+          <td><button (click)="activateGraph(i)" class="button">Show</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="has-text-centered">{{cheese[activeGraph].name}} <button (click)="activateModal()" class="button is-success">Buy</button></h2>
+    <hr>
+    <canvas *ngIf="lineChartData" baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+      [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+  </div>
+</div>
+
+<div class="modal is-clipped" [class.is-active]="modal">
+  <div (click)="modalClick()" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="content">
+        <div class="field">
+          <label class="label">By {{cheese[activeGraph].name}}:</label>
+          <p>Price: {{ cheese[activeGraph].price }}</p>
+          <input [(ngModel)]="amount" type="number" class="input" [class.is-danger]="!buyIsValid">
+          <p *ngIf="!buyIsValid" class="has-text-danger">insufficient funds</p>
+          <p>Share: {{amount ? amount / cheese[activeGraph].price : 0}}</p>
+        </div>
+        <button (click)="buyCheese(amount/cheese[activeGraph].price, amount)" class="button is-success">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<form #registerForm="ngForm" (submit)="registerForm.reset()">
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <input required [(ngModel)]="email" name="email" id="email" class="input" type="text">
+  </div>
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <input required [(ngModel)]="password" name="password" id="password" class="input" type="password">
+  </div>
+  <div class="field">
+    <button (click)="register(email, password)" class="button is-success" [disabled]="!registerForm.form.valid" type="submit">Sign
+      up now!</button>
+  </div>
+  <div *ngIf="message" class="help is-danger">{{message}}</div>
+</form>

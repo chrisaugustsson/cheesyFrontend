@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
   login(email: string, password: string) {
     this.authService.login(email, password).subscribe(
       res => {
-        this.authService.storeJWT(res["result"]["data"]["token"]);
+        this.authService.storeJWT(res["result"]["data"]["token"], res["result"]["data"]["user"]);
         this.message = "Log in successful";
       },
       error => this.message = error["error"]["error"]["error"]["detail"]

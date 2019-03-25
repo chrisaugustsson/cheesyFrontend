@@ -1,0 +1,41 @@
+<div class="section">
+  <div class="is-restricted">
+    <div class="content">
+      <h2>{{user}}</h2>
+      <hr>
+      <div class="columns is-vcentered">
+        <div class="column is-2">
+          <p>Credits: <b>{{credits}} CD</b></p>
+        </div>
+        <div class="column">
+          <button (click)="modal = true" class="button">Make deposit</button>
+        </div>
+      </div>
+    </div>
+    <div class="tabs">
+      <ul>
+        <li (click)="selection = false" [className]="!selection ? 'is-active' : '' "><a>Your cheezeses</a></li>
+        <li (click)="selection = true" [className]="selection ? 'is-active' : '' "><a>Cheese market</a></li>
+      </ul>
+    </div>
+    <div>
+      <app-cheese-market (update)="updateCredits()" [cheese]="cheese" [userCredits]="credits" *ngIf="selection"></app-cheese-market>
+      <app-user-cheese (update)="updateCredits()" *ngIf="!selection" [userCheese]="userCheese" [cheese]="cheese"></app-user-cheese>
+    </div>
+  </div>
+</div>
+
+<div class="modal is-clipped" [class.is-active]="modal">
+  <div (click)="modalClick()" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="content">
+        <div class="field">
+          <label class="label">Enter amount:</label>
+          <input [(ngModel)]="amount" type="number" class="input">
+        </div>
+        <button (click)="makeDeposit()" class="button is-success">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

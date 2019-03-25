@@ -7,14 +7,10 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  me: Object;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getMe().subscribe(data => {
-      this.me = data;
-    })
   }
 
 }

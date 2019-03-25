@@ -1,31 +1,21 @@
 <nav class="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" routerLink="">
-      <div class="content">
-        <h2>Me-sida</h2>
+    <a class="logo navbar-item" routerLink="">
+      <div class="content is-size-1">
+        <img src="assets/img/cheezy.png">
       </div>
     </a>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button" routerLink="">
-            Hem
-          </a>
-          <a class="button" routerLink="/reports">
-            Redovisa
-          </a>
           <a *ngIf="!loggedIn" class="button" routerLink="/login">
             Logga in
           </a>
-          <a *ngIf="loggedIn" class="button" routerLink="/newReport">
-            Skapa redovisning
-          </a>
-          <a class="button" routerLink="/chat">
-            Chat
+          <a *ngIf="loggedIn" class="button" routerLink="/user">
+            Account
           </a>
         </div>
       </div>
