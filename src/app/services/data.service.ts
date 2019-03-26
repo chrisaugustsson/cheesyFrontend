@@ -23,7 +23,7 @@ export class DataService {
       })
     };
 
-    return this.http.post("http://localhost:1337/user/info", { user }, httpOptions)
+    return this.http.post("https://cheesy-api.chau17.me/user/info", { user }, httpOptions)
   }
 
   makeDeposit(amount) {
@@ -36,7 +36,7 @@ export class DataService {
       })
     };
 
-    return this.http.post("http://localhost:1337/user/deposit", { amount, user }, httpOptions)
+    return this.http.post("https://cheesy-api.chau17.me/user/deposit", { amount, user }, httpOptions)
   }
 
   buyCheese(share, cheese, credits) {
@@ -48,7 +48,7 @@ export class DataService {
         'x-access-token': token
       })
     };
-    return this.http.post("http://localhost:1337/user/buyCheese", { share, cheese, user, credits }, httpOptions)
+    return this.http.post("https://cheesy-api.chau17.me/user/buyCheese", { share, cheese, user, credits }, httpOptions)
   }
 
   sellCheese(share, cheese, credits) {
@@ -60,6 +60,6 @@ export class DataService {
         'x-access-token': token
       })
     };
-    return this.http.post("http://localhost:1337/user/sellCheese", { share, cheese, user, credits }, httpOptions)
+    return this.http.post("https://cheesy-api.chau17.me/user/sellCheese", { share, cheese, user, credits }, httpOptions)
   }
 }

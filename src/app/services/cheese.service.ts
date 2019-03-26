@@ -26,6 +26,6 @@ export class CheeseService {
   }
 
   connect() {
-    this.socket = io("http://localhost:1337");
+    this.socket = io("https://cheesy-api.chau17.me");
   }
 }

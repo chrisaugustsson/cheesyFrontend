@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
-    return this.http.post("http://localhost:1337/user/login", { email, password });
+    return this.http.post("https://cheesy-api.chau17.me/user/login", { email, password });
   }
 
   storeJWT(token, user) {
@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   registerUser(email: string, password: string) {
-    return this.http.post("http://localhost:1337/user/register", { email, password });
+    return this.http.post("https://cheesy-api.chau17.me/user/register", { email, password });
   }
 
   public isLoggedIn() {

@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && rsync -av dist/my-app/* deploy@me.chau17.me:/var/www/me.chau17.me/html/"
+    "deploy": "npm run build && rsync -av dist/my-app/* deploy@cheesy.chau17.me:/var/www/cheesy.chau17.me/html/"
   },
   "private": true,
   "dependencies": {
